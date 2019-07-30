@@ -1,36 +1,29 @@
 <?php
 
-$address = [
-    "Sophie" => [
-        "street" => "Allée des Embruns",
-        "cp" => "33333",
-        "city" => "Pétaouchnok-les-Bains"
-    ],
-    "Jacques" => [
-        "street" => "Allée des Embrouilles",
-        "cp" => "33332",
-        "city" => "Pétaouchnok-City"
-    ],
-    "Marc" => [
-        "street" => "Allée des Noyés",
-        "cp" => "32333",
-        "city" => "Pétaouchnok"
-    ],
-    ];
+show("Salut tout le monde");
 
-    $ami = [
-        "Sophie"=>[
-            "name"=>"NoName",
-            "age"=>32,
-            "address"=>$address["Sophie"]
-        ],
-        "Marc"=>[
-            "name"=>"Namose",
-            "age"=>33,
-            "address"=>$address["Marc"]
-        ],
-    ];
+if(isset($_GET['goto'])) goto SuiteEtFin;
 
-    echo "<pre>";
-    var_dump($ami["Sophie"]);
-    echo "</pre>";
+show("Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus provident saepe perferendis dolores, eligendi accusantium natus reiciendis nemo beatae velit, quos, tempore temporibus unde. Impedit nesciunt consequatur amet recusandae unde.Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus provident saepe perferendis dolores, eligendi accusantium natus reiciendis nemo beatae velit, quos, tempore temporibus unde. Impedit nesciunt consequatur amet recusandae unde.Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus provident saepe perferendis dolores, eligendi accusantium natus reiciendis nemo beatae velit, quos, tempore temporibus unde. Impedit nesciunt consequatur amet recusandae unde.");
+
+SuiteEtFin:
+show("Voila c'est fini");
+
+function show($str){
+    echo "<p>", $str, "</p>";
+};
+
+echo "
+<button>TEST</button>
+<script>
+let button = document.querySelector('button');
+const query = window.location.search;
+const goToStatus = query === '? goto=true';
+
+const targetUrl = goToStatus ? '/' : '/?goto=true';
+
+button.addEventListener('click',() =>{
+    location.href= targetUrl;
+});
+
+</script>";
