@@ -1,11 +1,24 @@
 <?php
-$tmp = "aujourd'hui";
+$tab = array(1,2,3);
 
-$monparagraphe = <<<mondelimiteur
-Bonjour,
-J'espère que tout le monde va bien $tmp.<br/>
-quelque chose d'autre.
+for($i = 0; $i < sizeof($tab); $i++){
+    echo $tab[$i];
+    echo "<br/>";
+}
 
-mondelimiteur;
+$tab = ["coucou","les","amis"];
+foreach($tab as $value){
+    echo $value." ";
+    echo "<br/>";
+}
 
-echo $monparagraphe;
+echo "<br>";
+
+$tab = [
+    "debut" => "il était une fois...",
+    "fin" => "voila c'est fini"
+];
+
+foreach($tab as $key => $value){
+    echo"$key => $value<br>";
+}
